@@ -1,0 +1,133 @@
+/* Navbar Styles */
+nav {
+  background: #000;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 10px 0;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar items container */
+nav ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar item styles */
+nav ul li {
+  margin-left: 30px;
+  position: relative;
+}
+
+/* Navbar link styles */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+  position: relative;
+  font-size: 18px;
+}
+
+/* Hover effect for nav links */
+nav ul li a:hover {
+  color: #c77dff;
+}
+
+/* Neon underline effect */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #c77dff;
+  transition: width 0.3s ease;
+  box-shadow:
+    0 0 10px #c77dff,
+    0 0 20px #c77dff,
+    0 0 30px #c77dff;
+}
+
+/* Expand underline on hover */
+nav ul li a:hover::after {
+  width: 100%;
+  box-shadow:
+    0 0 20px #c77dff,
+    0 0 30px #c77dff,
+    0 0 40px #c77dff;
+}
+
+/* Keep underline visible for active links */
+nav ul li a.active::after {
+  width: 100%;
+  box-shadow:
+    0 0 10px #c77dff,
+    0 0 20px #c77dff,
+    0 0 30px #c77dff;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+}
+
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    display: none;
+    align-items: flex-start;
+  }
+
+  nav ul.nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  /* Adjust neon underline for mobile hamburger menu */
+  nav ul.nav-links li a::after {
+    height: 1px; /* smaller height */
+    box-shadow:
+      0 0 2px #c77dff,
+      /* softer glow */ 0 0 4px #c77dff;
+  }
+
+  /* When hovering or active on mobile */
+  nav ul.nav-links li a:hover::after,
+  nav ul.nav-links li a.active::after {
+    width: 100%;
+    box-shadow:
+      0 0 3px #c77dff,
+      /* a little more glow */ 0 0 6px #c77dff;
+  }
+}

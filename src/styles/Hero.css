@@ -1,0 +1,33 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.hero-text {
+  font-size: 4em;
+  display: inline-block;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-text {
+    font-size: 3em;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .hero-text {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 1.6em;
+  }
+}
